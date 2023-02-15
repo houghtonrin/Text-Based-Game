@@ -8,6 +8,8 @@ def bedroom():
 	if newday==True:
 		print(f"Good Morning! It is {DAY[daycount]}. {DayDescription[daycount]}")
 		daycount + 1
+		print(f"You have 10 Executive Function Points.")
+		BedChoice = input(f"Would you like to:\nget out of bed (o): -1 EF point\nor nap (n): +1 to 4 EF points\n")
 	elif newday!=True:
 		BedChoice = input(f"Welcome to the Bedroom! You see a bed, in a room! Would you like to:\nleave (l)\nnap (n)\nsleep(s)\nor learn more (i)")
 		if BedChoice == "l":

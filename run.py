@@ -1,4 +1,4 @@
-import main
+import game
 
 quit = ('quit','q')
 run = ('run','r')
@@ -10,7 +10,7 @@ while choice not in quit:
 	choice = input("Choose an option:\n").lower()
 	if choice in run:
 		print("<----Starting Program---->")
-		main.main()
+		game.main()
 		print("<----Program Complete---->")
 	elif choice in quit:
 		print("Goodbye.")
