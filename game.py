@@ -123,7 +123,32 @@ def livingroom(inventory):
 			game.bedroom(inventory)
 	print(f"{EFpoints}")
 def kitchen(inventory):
-	RoomChoice = ""
+	choice = input(f"Welcome to the Kitchen!\nYou see a fridge and a stove!\nWould you like to make food (m): -2 EF points, +2 Health\nOrder food (o): -1 Health\nor leave(l)")
+	if choice == "m":
+		inventory[5] = True
+		inventory[3] += 2
+		inventory[0] -= 2
+		print(f"You have made some good food and enjoyed it.")
+		RoomChoice = input(f"Would you like to go to the Livingroom (l)\nor the Study (s)\n")
+		if RoomChoice == "k":
+			game.livingroom(inventory)
+		elif RoomChoice == "b":
+			game.study(inventory)
+	elif choice == "o":
+		inventory[5] = True
+		inventory[3] -= 1
+		print(f"You ordered food and enjoyed it.")
+		RoomChoice = input(f"Would you like to go to the Livingroom (l)\nor the Study (s)\n")
+		if RoomChoice == "k":
+			game.livingroom(inventory)
+		elif RoomChoice == "b":
+			game.study(inventory)
+	elif choice == "l":
+		RoomChoice = input(f"Would you like to go to the Livingroom (l)\nor the Study (s)\n")
+		if RoomChoice == "k":
+			game.livingroom(inventory)
+		elif RoomChoice == "b":
+			game.study(inventory)
 def main():
 	#starting game
 	EFpoints = 10
